@@ -47,3 +47,4 @@ $('cats').onclick=e=>{let b=e.target.closest('[data-cat]');if(b){category=+b.dat
 $('content').onclick=e=>{let b=e.target.closest('button');if(!b)return;if(b.dataset.say){let p=data.flatMap(d=>d.phrases).find(x=>x.id===b.dataset.say);if(p)speak(p.en)}if(b.dataset.save)save(b.dataset.save);if(b.dataset.sayFlow!==undefined)speak(data[category].flow[+b.dataset.sayFlow][1])};
 $('search').oninput=e=>{query=e.target.value;render()};$('settingsBtn').onclick=()=>$('settings').classList.toggle('hide');$('testVoice').onclick=()=>speak('Hello, sweetheart! Let’s have a wonderful day!');$('phrasesTab').onclick=()=>{tab='phrases';render()};$('flowTab').onclick=()=>{tab='flow';render()};$('playAll').onclick=playAll;function nav(v){view=v;tab='phrases';query='';$('search').value='';render()}$('allNav').onclick=()=>nav('all');$('favNav').onclick=()=>nav('favorites');$('dailyNav').onclick=()=>nav('daily');render();
 </script></body></html>
+
